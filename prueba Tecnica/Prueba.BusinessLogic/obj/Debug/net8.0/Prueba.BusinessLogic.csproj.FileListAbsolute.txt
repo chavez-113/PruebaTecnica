@@ -1,0 +1,17 @@
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\bin\Debug\net8.0\Prueba.BusinessLogic.deps.json
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\bin\Debug\net8.0\Prueba.BusinessLogic.dll
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\bin\Debug\net8.0\Prueba.BusinessLogic.pdb
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\bin\Debug\net8.0\Prueba.DataAccess.dll
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\bin\Debug\net8.0\Prueba.Entities.dll
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\bin\Debug\net8.0\Prueba.DataAccess.pdb
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\bin\Debug\net8.0\Prueba.Entities.pdb
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\Prueba.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\Prueba.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\Prueba.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\Prueba.BusinessLogic.AssemblyInfo.cs
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\Prueba.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\Prueba.B.C8A48105.Up2Date
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\Prueba.BusinessLogic.dll
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\refint\Prueba.BusinessLogic.dll
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\Prueba.BusinessLogic.pdb
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.BusinessLogic\obj\Debug\net8.0\ref\Prueba.BusinessLogic.dll

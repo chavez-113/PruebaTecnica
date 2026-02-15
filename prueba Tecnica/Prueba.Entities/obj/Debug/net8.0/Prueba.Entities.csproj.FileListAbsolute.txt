@@ -1,0 +1,12 @@
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\bin\Debug\net8.0\Prueba.Entities.deps.json
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\bin\Debug\net8.0\Prueba.Entities.dll
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\bin\Debug\net8.0\Prueba.Entities.pdb
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\obj\Debug\net8.0\Prueba.Entities.csproj.AssemblyReference.cache
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\obj\Debug\net8.0\Prueba.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\obj\Debug\net8.0\Prueba.Entities.AssemblyInfoInputs.cache
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\obj\Debug\net8.0\Prueba.Entities.AssemblyInfo.cs
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\obj\Debug\net8.0\Prueba.Entities.csproj.CoreCompileInputs.cache
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\obj\Debug\net8.0\Prueba.Entities.dll
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\obj\Debug\net8.0\refint\Prueba.Entities.dll
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\obj\Debug\net8.0\Prueba.Entities.pdb
+C:\Users\GhostRadiance\Desktop\prueba Tecnica\Prueba.Entities\obj\Debug\net8.0\ref\Prueba.Entities.dll

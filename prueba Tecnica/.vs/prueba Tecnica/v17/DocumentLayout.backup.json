@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba\\extensions\\mappingprofileextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|solutionrelative:prueba\\extensions\\mappingprofileextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|solutionrelative:prueba\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303009B0-7337-45BD-BA49-43C0A589A3A9}|Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba.businesslogic\\serviceconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303009B0-7337-45BD-BA49-43C0A589A3A9}|Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj|solutionrelative:prueba.businesslogic\\serviceconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF1BBC57-71FF-412B-BB21-D3160C6DC9C5}|Prueba.DataAccess\\Prueba.DataAccess.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba.dataaccess\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF1BBC57-71FF-412B-BB21-D3160C6DC9C5}|Prueba.DataAccess\\Prueba.DataAccess.csproj|solutionrelative:prueba.dataaccess\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303009B0-7337-45BD-BA49-43C0A589A3A9}|Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba.businesslogic\\services\\generalservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303009B0-7337-45BD-BA49-43C0A589A3A9}|Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj|solutionrelative:prueba.businesslogic\\services\\generalservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|solutionrelative:prueba\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|solutionrelative:prueba\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF1BBC57-71FF-412B-BB21-D3160C6DC9C5}|Prueba.DataAccess\\Prueba.DataAccess.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba.dataaccess\\repositories\\scriptdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF1BBC57-71FF-412B-BB21-D3160C6DC9C5}|Prueba.DataAccess\\Prueba.DataAccess.csproj|solutionrelative:prueba.dataaccess\\repositories\\scriptdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba\\models\\productoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|solutionrelative:prueba\\models\\productoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF1BBC57-71FF-412B-BB21-D3160C6DC9C5}|Prueba.DataAccess\\Prueba.DataAccess.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba.dataaccess\\dto\\clienteresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF1BBC57-71FF-412B-BB21-D3160C6DC9C5}|Prueba.DataAccess\\Prueba.DataAccess.csproj|solutionrelative:prueba.dataaccess\\dto\\clienteresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba\\models\\clienteviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79703892-B92D-45B8-9653-7D19A5CF4EC5}|Prueba\\Prueba.csproj|solutionrelative:prueba\\models\\clienteviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF1BBC57-71FF-412B-BB21-D3160C6DC9C5}|Prueba.DataAccess\\Prueba.DataAccess.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba.dataaccess\\dto\\spproductoresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF1BBC57-71FF-412B-BB21-D3160C6DC9C5}|Prueba.DataAccess\\Prueba.DataAccess.csproj|solutionrelative:prueba.dataaccess\\dto\\spproductoresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{303009B0-7337-45BD-BA49-43C0A589A3A9}|Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj|c:\\users\\ghostradiance\\desktop\\prueba tecnica\\prueba.businesslogic\\dto\\clienteresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{303009B0-7337-45BD-BA49-43C0A589A3A9}|Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj|solutionrelative:prueba.businesslogic\\dto\\clienteresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MappingProfileExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Extensions\\MappingProfileExtensions.cs",
+              "RelativeDocumentMoniker": "Prueba\\Extensions\\MappingProfileExtensions.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Extensions\\MappingProfileExtensions.cs",
+              "RelativeToolTip": "Prueba\\Extensions\\MappingProfileExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T22:18:06.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiceConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.BusinessLogic\\ServiceConfiguration.cs",
+              "RelativeDocumentMoniker": "Prueba.BusinessLogic\\ServiceConfiguration.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.BusinessLogic\\ServiceConfiguration.cs",
+              "RelativeToolTip": "Prueba.BusinessLogic\\ServiceConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T22:14:17.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GeneralServices.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.BusinessLogic\\Services\\GeneralServices.cs",
+              "RelativeDocumentMoniker": "Prueba.BusinessLogic\\Services\\GeneralServices.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.BusinessLogic\\Services\\GeneralServices.cs",
+              "RelativeToolTip": "Prueba.BusinessLogic\\Services\\GeneralServices.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAIAwwI0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T20:26:55.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\Repositories\\ProductoRepository.cs",
+              "RelativeDocumentMoniker": "Prueba.DataAccess\\Repositories\\ProductoRepository.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\Repositories\\ProductoRepository.cs",
+              "RelativeToolTip": "Prueba.DataAccess\\Repositories\\ProductoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T22:04:17.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "Prueba\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "Prueba\\Controllers\\ProductoController.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAcwGYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T22:04:49.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ClienteResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\DTO\\ClienteResponseDto.cs",
+              "RelativeDocumentMoniker": "Prueba.DataAccess\\DTO\\ClienteResponseDto.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\DTO\\ClienteResponseDto.cs",
+              "RelativeToolTip": "Prueba.DataAccess\\DTO\\ClienteResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T22:01:58.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Program.cs",
+              "RelativeDocumentMoniker": "Prueba\\Program.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Program.cs",
+              "RelativeToolTip": "Prueba\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T22:06:30.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ClienteResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.BusinessLogic\\DTO\\ClienteResponseDto.cs",
+              "RelativeDocumentMoniker": "Prueba.BusinessLogic\\DTO\\ClienteResponseDto.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.BusinessLogic\\DTO\\ClienteResponseDto.cs",
+              "RelativeToolTip": "Prueba.BusinessLogic\\DTO\\ClienteResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T21:35:58.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ClienteViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Models\\ClienteViewModel.cs",
+              "RelativeDocumentMoniker": "Prueba\\Models\\ClienteViewModel.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Models\\ClienteViewModel.cs",
+              "RelativeToolTip": "Prueba\\Models\\ClienteViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T21:52:21.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "Prueba\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "Prueba\\Controllers\\ClienteController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T22:08:47.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Models\\ProductoViewModel.cs",
+              "RelativeDocumentMoniker": "Prueba\\Models\\ProductoViewModel.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba\\Models\\ProductoViewModel.cs",
+              "RelativeToolTip": "Prueba\\Models\\ProductoViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T22:02:24.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SpProductoResult.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\DTO\\SpProductoResult.cs",
+              "RelativeDocumentMoniker": "Prueba.DataAccess\\DTO\\SpProductoResult.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\DTO\\SpProductoResult.cs",
+              "RelativeToolTip": "Prueba.DataAccess\\DTO\\SpProductoResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T22:00:43.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ScriptDataBase.cs",
+              "DocumentMoniker": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\Repositories\\ScriptDataBase.cs",
+              "RelativeDocumentMoniker": "Prueba.DataAccess\\Repositories\\ScriptDataBase.cs",
+              "ToolTip": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\Repositories\\ScriptDataBase.cs",
+              "RelativeToolTip": "Prueba.DataAccess\\Repositories\\ScriptDataBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-15T20:16:34.564Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
