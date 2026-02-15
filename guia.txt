@@ -1,0 +1,892 @@
+Crear la base de datos con los lineamientos enviados
+
+ejecutar los procesos almacenados
+
+clientes
+-crear
+-listar
+-buscar
+-actualizar
+
+Productos
+-crear
+-listar
+-buscar
+-actualizar
+
+procesos almacenados
+-- Created by GitHub Copilot in SSMS - review carefully before executing
+-- =============================================
+-- Script: Creación de Procedimientos Almacenados - OrderManagementDB
+-- Descripción: Este script contiene todos los procedimientos almacenados
+--              para el sistema de gestión de órdenes. Incluye módulos de
+--              Cliente, Producto y Orden.
+-- =============================================
+
+USE [OrderManagementDB]
+GO
+
+-- ============================================
+-- MÓDULO: CLIENTE
+-- ============================================
+
+-- SP para Crear Cliente
+IF OBJECT_ID('dbo.SP_Cliente_Crear', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Cliente_Crear;
+GO
+
+CREATE PROCEDURE dbo.SP_Cliente_Crear 
+    @Nombre NVARCHAR(100),
+    @Identidad NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        -- Validación de nombre (longitud)
+        IF LEN(@Nombre) < 3 -- Longitud mínima de nombre
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El nombre debe tener al menos 3 caracteres' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+
+        IF LEN(@Nombre) > 100 -- Longitud máxima de nombre
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El nombre no puede exceder 100 caracteres' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+
+        -- Validación de identidad (longitud exacta)
+        IF LEN(@Identidad) != 15 -- Formato de identidad debe ser exactamente 15 caracteres
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'La identidad debe tener exactamente 15 caracteres' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+
+        -- Validación de formato de identidad (0000-0000-00000)
+        IF @Identidad NOT LIKE '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]'
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'La identidad debe tener el formato 0000-0000-00000' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+        
+        -- Verifica si ya existe un cliente con la misma identidad
+        IF EXISTS (SELECT 1 FROM dbo.Cliente WHERE identidad = @Identidad)
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'Ya existe un cliente con la identidad ' + @Identidad + '.' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+        
+        -- Inserta el nuevo cliente
+        INSERT INTO dbo.Cliente (nombre, identidad)
+        VALUES (@Nombre, @Identidad);
+        
+        DECLARE @NewId BIGINT = SCOPE_IDENTITY();
+        
+        -- Retorna éxito
+        SELECT 
+            1 AS code_Status,
+            'Cliente creado exitosamente' AS message_Status,
+            @NewId AS ClienteId,
+            @Nombre AS Nombre,
+            @Identidad AS Identidad;
+               
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status,
+            NULL AS ClienteId,
+            NULL AS Nombre,
+            NULL AS Identidad;
+    END CATCH
+END
+GO
+
+-- SP para Actualizar Cliente
+IF OBJECT_ID('dbo.SP_Cliente_Actualizar', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Cliente_Actualizar;
+GO
+
+CREATE PROCEDURE dbo.SP_Cliente_Actualizar
+    @ClienteId BIGINT,
+    @Nombre NVARCHAR(100),
+    @Identidad NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        -- Validación de nombre (longitud)
+        IF LEN(@Nombre) < 3 -- Longitud mínima de nombre
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El nombre debe tener al menos 3 caracteres' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+
+        IF LEN(@Nombre) > 100 -- Longitud máxima de nombre
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El nombre no puede exceder 100 caracteres' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+
+        -- Validación de identidad (longitud exacta)
+        IF LEN(@Identidad) != 15 -- Formato de identidad debe ser exactamente 15 caracteres
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'La identidad debe tener exactamente 15 caracteres' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+
+        -- Validación de formato de identidad (0000-0000-00000)
+        IF @Identidad NOT LIKE '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]'
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'La identidad debe tener el formato 0000-0000-00000' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+
+        -- Verifica si el cliente existe
+        IF NOT EXISTS (SELECT 1 FROM dbo.Cliente WHERE ClienteId = @ClienteId)
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'Cliente no encontrado' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+        
+        -- Verifica si la identidad ya está siendo usada por otro cliente
+        IF EXISTS (SELECT 1 FROM dbo.Cliente WHERE identidad = @Identidad AND ClienteId != @ClienteId)
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'Ya existe otro cliente con la identidad ' + @Identidad + '.' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+            RETURN;
+        END
+        
+        -- Actualiza el cliente
+        UPDATE dbo.Cliente
+        SET nombre = @Nombre,
+            identidad = @Identidad
+        WHERE ClienteId = @ClienteId;
+        
+        -- Retorna éxito con los datos actualizados
+        SELECT 
+            1 AS code_Status,
+            'Cliente actualizado exitosamente' AS message_Status,
+            @ClienteId AS ClienteId,
+            @Nombre AS Nombre,
+            @Identidad AS Identidad;
+               
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status,
+            NULL AS ClienteId,
+            NULL AS Nombre,
+            NULL AS Identidad;
+    END CATCH
+END
+GO
+
+-- SP para Buscar Cliente por ID
+IF OBJECT_ID('dbo.SP_Cliente_Buscar', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Cliente_Buscar;
+GO
+
+CREATE PROCEDURE dbo.SP_Cliente_Buscar
+    @ClienteId BIGINT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        IF EXISTS (SELECT 1 FROM dbo.Cliente WHERE ClienteId = @ClienteId)
+        BEGIN
+            SELECT 
+                1 AS code_Status,
+                'Cliente encontrado' AS message_Status,
+                ClienteId,
+                nombre AS Nombre,
+                identidad AS Identidad
+            FROM dbo.Cliente
+            WHERE ClienteId = @ClienteId;
+        END
+        ELSE
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'Cliente no encontrado' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+        END
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status,
+            NULL AS ClienteId,
+            NULL AS Nombre,
+            NULL AS Identidad;
+    END CATCH
+END
+GO
+
+-- SP para Buscar Cliente por ID (versión alternativa)
+IF OBJECT_ID('dbo.SP_Cliente_BuscarId', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Cliente_BuscarId;
+GO
+
+CREATE PROCEDURE dbo.SP_Cliente_BuscarId
+    @ClienteId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        -- Verifica si existe el cliente
+        IF EXISTS (SELECT 1 FROM dbo.Cliente WHERE ClienteId = @ClienteId)
+        BEGIN
+            SELECT 
+                1 AS code_Status,
+                'Cliente encontrado' AS message_Status,
+                ClienteId,
+                nombre AS Nombre,
+                identidad AS Identidad
+            FROM dbo.Cliente
+            WHERE ClienteId = @ClienteId;
+        END
+        ELSE
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'Cliente no encontrado' AS message_Status,
+                NULL AS ClienteId,
+                NULL AS Nombre,
+                NULL AS Identidad;
+        END
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status,
+            NULL AS ClienteId,
+            NULL AS Nombre,
+            NULL AS Identidad;
+    END CATCH
+END
+GO
+
+-- SP para Listar Clientes
+IF OBJECT_ID('dbo.SP_Cliente_Listar', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Cliente_Listar;
+GO
+
+CREATE PROCEDURE dbo.SP_Cliente_Listar
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        SELECT 
+            ClienteId,
+            nombre AS Nombre,
+            identidad AS Identidad
+        FROM dbo.Cliente
+        ORDER BY ClienteId;
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            NULL AS ClienteId,
+            NULL AS Nombre,
+            NULL AS Identidad
+        WHERE 1 = 0;
+    END CATCH
+END
+GO
+
+-- SP para Listar Clientes (versión simplificada)
+IF OBJECT_ID('dbo.SP_Clientes_Listar', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Clientes_Listar;
+GO
+
+CREATE PROCEDURE dbo.SP_Clientes_Listar
+AS
+BEGIN
+    SELECT ClienteId,
+           Nombre,
+           Identidad
+    FROM dbo.Cliente
+END
+GO
+
+-- ============================================
+-- MÓDULO: PRODUCTO
+-- ============================================
+
+-- SP para Crear Producto
+IF OBJECT_ID('dbo.SP_Producto_Crear', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Producto_Crear;
+GO
+
+CREATE PROCEDURE dbo.SP_Producto_Crear
+    @Nombre NVARCHAR(100),
+    @Descripcion NVARCHAR(500),
+    @Precio DECIMAL(10,2),
+    @Existencia INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        -- Validación de nombre (longitud)
+        IF LEN(@Nombre) < 3 -- Longitud mínima de nombre
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El nombre debe tener al menos 3 caracteres' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+            RETURN;
+        END
+
+        IF LEN(@Nombre) > 100 -- Longitud máxima de nombre
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El nombre no puede exceder 100 caracteres' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+            RETURN;
+        END
+
+        -- Validación de precio
+        IF @Precio <= 0 -- El precio debe ser positivo
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El precio debe ser mayor a 0' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+            RETURN;
+        END
+
+        -- Validación de existencia
+        IF @Existencia < 0 -- La existencia no puede ser negativa
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'La existencia debe ser mayor o igual a 0' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+            RETURN;
+        END
+        
+        -- Inserta el nuevo producto
+        INSERT INTO dbo.Producto (Nombre, Descripcion, Precio, Existencia)
+        VALUES (@Nombre, @Descripcion, @Precio, @Existencia);
+        
+        DECLARE @NewId BIGINT = SCOPE_IDENTITY();
+        
+        -- Retorna éxito
+        SELECT 
+            1 AS code_Status,
+            'Producto creado exitosamente' AS message_Status,
+            @NewId AS ProductoId,
+            @Nombre AS Nombre,
+            @Descripcion AS Descripcion,
+            @Precio AS Precio,
+            @Existencia AS Existencia;
+               
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status,
+            NULL AS ProductoId,
+            NULL AS Nombre,
+            NULL AS Descripcion,
+            NULL AS Precio,
+            NULL AS Existencia;
+    END CATCH
+END
+GO
+
+-- SP para Actualizar Producto
+IF OBJECT_ID('dbo.SP_Producto_Actualizar', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Producto_Actualizar;
+GO
+
+CREATE PROCEDURE dbo.SP_Producto_Actualizar
+    @ProductoId BIGINT,
+    @Nombre NVARCHAR(100),
+    @Descripcion NVARCHAR(500),
+    @Precio DECIMAL(10,2),
+    @Existencia INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        -- Validación de nombre (longitud)
+        IF LEN(@Nombre) < 3 -- Longitud mínima de nombre
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El nombre debe tener al menos 3 caracteres' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+            RETURN;
+        END
+
+        IF LEN(@Nombre) > 100 -- Longitud máxima de nombre
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El nombre no puede exceder 100 caracteres' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+            RETURN;
+        END
+
+        -- Validación de precio
+        IF @Precio <= 0 -- El precio debe ser positivo
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El precio debe ser mayor a 0' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+            RETURN;
+        END
+
+        -- Validación de existencia
+        IF @Existencia < 0 -- La existencia no puede ser negativa
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'La existencia debe ser mayor o igual a 0' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+            RETURN;
+        END
+
+        -- Verifica si el producto existe
+        IF NOT EXISTS (SELECT 1 FROM dbo.Producto WHERE ProductoId = @ProductoId)
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'Producto no encontrado' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+            RETURN;
+        END
+        
+        -- Actualiza el producto
+        UPDATE dbo.Producto
+        SET Nombre = @Nombre,
+            Descripcion = @Descripcion,
+            Precio = @Precio,
+            Existencia = @Existencia
+        WHERE ProductoId = @ProductoId;
+        
+        -- Retorna éxito
+        SELECT 
+            1 AS code_Status,
+            'Producto actualizado exitosamente' AS message_Status,
+            @ProductoId AS ProductoId,
+            @Nombre AS Nombre,
+            @Descripcion AS Descripcion,
+            @Precio AS Precio,
+            @Existencia AS Existencia;
+               
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status,
+            NULL AS ProductoId,
+            NULL AS Nombre,
+            NULL AS Descripcion,
+            NULL AS Precio,
+            NULL AS Existencia;
+    END CATCH
+END
+GO
+
+-- SP para Buscar Producto por ID
+IF OBJECT_ID('dbo.SP_Producto_Buscar', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Producto_Buscar;
+GO
+
+CREATE PROCEDURE dbo.SP_Producto_Buscar
+    @ProductoId BIGINT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        IF EXISTS (SELECT 1 FROM dbo.Producto WHERE ProductoId = @ProductoId)
+        BEGIN
+            SELECT 
+                1 AS code_Status,
+                'Producto encontrado' AS message_Status,
+                ProductoId,
+                Nombre,
+                Descripcion,
+                Precio,
+                Existencia
+            FROM dbo.Producto
+            WHERE ProductoId = @ProductoId;
+        END
+        ELSE
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'Producto no encontrado' AS message_Status,
+                NULL AS ProductoId,
+                NULL AS Nombre,
+                NULL AS Descripcion,
+                NULL AS Precio,
+                NULL AS Existencia;
+        END
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status,
+            NULL AS ProductoId,
+            NULL AS Nombre,
+            NULL AS Descripcion,
+            NULL AS Precio,
+            NULL AS Existencia;
+    END CATCH
+END
+GO
+
+-- SP para Listar Productos
+IF OBJECT_ID('dbo.SP_Producto_Listar', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Producto_Listar;
+GO
+
+CREATE PROCEDURE dbo.SP_Producto_Listar
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        SELECT 
+            ProductoId,
+            Nombre,
+            Descripcion,
+            Precio,
+            Existencia
+        FROM dbo.Producto
+        ORDER BY ProductoId;
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            NULL AS ProductoId,
+            NULL AS Nombre,
+            NULL AS Descripcion,
+            NULL AS Precio,
+            NULL AS Existencia
+        WHERE 1 = 0;
+    END CATCH
+END
+GO
+
+-- SP para Actualizar Existencia de Producto
+IF OBJECT_ID('dbo.SP_Producto_ActualizarExistencia', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Producto_ActualizarExistencia;
+GO
+
+CREATE PROCEDURE dbo.SP_Producto_ActualizarExistencia
+    @ProductoId BIGINT,
+    @Cantidad INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        -- Valida que el producto exista
+        IF NOT EXISTS (SELECT 1 FROM dbo.Producto WHERE ProductoId = @ProductoId)
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'Producto no encontrado' AS message_Status;
+            RETURN;
+        END
+        
+        -- Valida existencia suficiente
+        DECLARE @ExistenciaActual INT;
+        SELECT @ExistenciaActual = Existencia FROM dbo.Producto WHERE ProductoId = @ProductoId;
+        
+        IF @ExistenciaActual < @Cantidad
+        BEGIN
+            DECLARE @NombreProducto NVARCHAR(100);
+            SELECT @NombreProducto = Nombre FROM dbo.Producto WHERE ProductoId = @ProductoId;
+            
+            SELECT 
+                0 AS code_Status,
+                'El producto ''' + @NombreProducto + ''' no tiene suficientes existencias. Disponible: ' + 
+                CAST(@ExistenciaActual AS NVARCHAR(10)) + ', Solicitado: ' + CAST(@Cantidad AS NVARCHAR(10)) AS message_Status;
+            RETURN;
+        END
+        
+        -- Actualiza la existencia
+        UPDATE dbo.Producto
+        SET Existencia = Existencia - @Cantidad
+        WHERE ProductoId = @ProductoId;
+        
+        SELECT 
+            1 AS code_Status,
+            'Existencia actualizada exitosamente' AS message_Status;
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status;
+    END CATCH
+END
+GO
+
+-- ============================================
+-- MÓDULO: ORDEN
+-- ============================================
+
+-- SP para Crear Orden (cabecera)
+IF OBJECT_ID('dbo.SP_Orden_Crear', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Orden_Crear;
+GO
+
+CREATE PROCEDURE dbo.SP_Orden_Crear
+    @ClienteId BIGINT,
+    @Impuesto DECIMAL(10,2),
+    @Subtotal DECIMAL(10,2),
+    @Total DECIMAL(10,2)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        -- Valida que el cliente exista
+        IF NOT EXISTS (SELECT 1 FROM dbo.Cliente WHERE ClienteId = @ClienteId)
+        BEGIN
+            SELECT 
+                0 AS code_Status,
+                'El cliente especificado no existe' AS message_Status,
+                NULL AS OrdenId;
+            RETURN;
+        END
+        
+        -- Inserta la orden
+        INSERT INTO dbo.Orden (ClienteId, Impuesto, Subtotal, Total, FechaCreacion)
+        VALUES (@ClienteId, @Impuesto, @Subtotal, @Total, GETDATE());
+        
+        DECLARE @NewId BIGINT = SCOPE_IDENTITY();
+        
+        SELECT 
+            1 AS code_Status,
+            'Orden creada exitosamente' AS message_Status,
+            @NewId AS OrdenId;
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status,
+            NULL AS OrdenId;
+    END CATCH
+END
+GO
+
+-- SP para Actualizar totales de la Orden
+IF OBJECT_ID('dbo.SP_Orden_ActualizarTotales', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Orden_ActualizarTotales;
+GO
+
+CREATE PROCEDURE dbo.SP_Orden_ActualizarTotales
+    @OrdenId BIGINT,
+    @Impuesto DECIMAL(10,2),
+    @Subtotal DECIMAL(10,2),
+    @Total DECIMAL(10,2)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        UPDATE dbo.Orden
+        SET Impuesto = @Impuesto,
+            Subtotal = @Subtotal,
+            Total = @Total
+        WHERE OrdenId = @OrdenId;
+        
+        SELECT 
+            1 AS code_Status,
+            'Orden actualizada exitosamente' AS message_Status;
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status;
+    END CATCH
+END
+GO
+
+-- SP para Obtener Orden con Detalles
+IF OBJECT_ID('dbo.SP_Orden_ObtenerConDetalles', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_Orden_ObtenerConDetalles;
+GO
+
+CREATE PROCEDURE dbo.SP_Orden_ObtenerConDetalles
+    @OrdenId BIGINT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        -- Retorna la información de la orden
+        SELECT 
+            OrdenId,
+            ClienteId,
+            Impuesto,
+            Subtotal,
+            Total,
+            FechaCreacion
+        FROM dbo.Orden
+        WHERE OrdenId = @OrdenId;
+        
+        -- Retorna los detalles de la orden
+        SELECT 
+            DetalleOrdenId,
+            OrdenId,
+            ProductoId,
+            Cantidad,
+            Impuesto,
+            Subtotal,
+            Total
+        FROM dbo.DetalleOrden
+        WHERE OrdenId = @OrdenId;
+    END TRY
+    BEGIN CATCH
+        SELECT NULL WHERE 1 = 0;
+    END CATCH
+END
+GO
+
+-- SP para Crear Detalle de Orden
+IF OBJECT_ID('dbo.SP_DetalleOrden_Crear', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.SP_DetalleOrden_Crear;
+GO
+
+CREATE PROCEDURE dbo.SP_DetalleOrden_Crear
+    @OrdenId BIGINT,
+    @ProductoId BIGINT,
+    @Cantidad INT,
+    @Impuesto DECIMAL(10,2),
+    @Subtotal DECIMAL(10,2),
+    @Total DECIMAL(10,2)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRY
+        INSERT INTO dbo.DetalleOrden (OrdenId, ProductoId, Cantidad, Impuesto, Subtotal, Total)
+        VALUES (@OrdenId, @ProductoId, @Cantidad, @Impuesto, @Subtotal, @Total);
+        
+        DECLARE @NewId BIGINT = SCOPE_IDENTITY();
+        
+        SELECT 
+            1 AS code_Status,
+            'Detalle creado exitosamente' AS message_Status,
+            @NewId AS DetalleOrdenId;
+    END TRY
+    BEGIN CATCH
+        SELECT 
+            0 AS code_Status,
+            ERROR_MESSAGE() AS message_Status,
+            NULL AS DetalleOrdenId;
+    END CATCH
+END
+GO
+
+PRINT 'Script ejecutado exitosamente. Total de procedimientos creados: 15'
+GO
