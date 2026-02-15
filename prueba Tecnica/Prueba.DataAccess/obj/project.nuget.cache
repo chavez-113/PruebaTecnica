@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qxV1eF/3Vgs=",
+  "dgSpecHash": "nFJV5yEV37E=",
   "success": true,
-  "projectFilePath": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\Prueba.DataAccess.csproj",
+  "projectFilePath": "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.DataAccess\\Prueba.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GhostRadiance\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\GhostRadiance\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

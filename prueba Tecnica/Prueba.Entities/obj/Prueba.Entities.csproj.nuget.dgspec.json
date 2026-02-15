@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj": {}
+    "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj": {
+    "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj",
+        "projectUniqueName": "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj",
         "projectName": "Prueba.Entities",
-        "projectPath": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj",
+        "projectPath": "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj",
         "packagesPath": "C:\\Users\\GhostRadiance\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.Entities\\obj\\",
+        "outputPath": "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Aplicaciones\\Visual Studio Community\\Componentes\\NuGetPackages"

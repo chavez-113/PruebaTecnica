@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rBD2RZ3wtko=",
+  "dgSpecHash": "E1L7hxH/kQM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj",
+  "projectFilePath": "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.Entities\\Prueba.Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GhostRadiance\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512"
   ],

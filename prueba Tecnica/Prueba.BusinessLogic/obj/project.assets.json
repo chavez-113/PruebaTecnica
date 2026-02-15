@@ -2518,11 +2518,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj",
+      "projectUniqueName": "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj",
       "projectName": "Prueba.BusinessLogic",
-      "projectPath": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj",
+      "projectPath": "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.BusinessLogic\\Prueba.BusinessLogic.csproj",
       "packagesPath": "C:\\Users\\GhostRadiance\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.BusinessLogic\\obj\\",
+      "outputPath": "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Aplicaciones\\Visual Studio Community\\Componentes\\NuGetPackages"
@@ -2544,8 +2544,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\Prueba.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\GhostRadiance\\Desktop\\prueba Tecnica\\Prueba.DataAccess\\Prueba.DataAccess.csproj"
+            "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.DataAccess\\Prueba.DataAccess.csproj": {
+              "projectPath": "D:\\Programming-Yo\\PruebaTecnica\\prueba Tecnica\\Prueba.DataAccess\\Prueba.DataAccess.csproj"
             }
           }
         }
